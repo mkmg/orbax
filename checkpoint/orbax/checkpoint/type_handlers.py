@@ -81,7 +81,7 @@ _ZARRAY_SUFFIX = '/.zarray'
 ZARR_VER2 = 'zarr'
 ZARR_VER3 = 'zarr3'
 
-_DEFAULT_OCDBT_TARGET_DATA_FILE_SIZE = 2**31  # 2GB
+_DEFAULT_OCDBT_TARGET_DATA_FILE_SIZE = 200000000 #2**31  # 2GB
 
 
 async def _assert_parameter_files_exist(
