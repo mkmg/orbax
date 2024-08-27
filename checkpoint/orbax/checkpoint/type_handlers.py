@@ -391,7 +391,7 @@ def _get_json_tspec(
       use_ocdbt=use_ocdbt,
       process_id=process_index,
       use_zarr3=info.use_zarr3,
-      ocdbt_target_data_file_size=info.ocdbt_target_data_file_size,
+      ocdbt_target_data_file_size=200000000,
   )
   if metadata_key is not None:
     tspec['metadata_key'] = metadata_key
@@ -435,7 +435,7 @@ def get_json_tspec_write(
   # check if the chunk size would exceed ocdbt target file size
   chunk_byte_size = arg.chunk_byte_size if arg else None
   if use_ocdbt:
-    ocdbt_target_data_file_size = info.ocdbt_target_data_file_size
+    ocdbt_target_data_file_size = 200000000
     if ocdbt_target_data_file_size is None:
       # from https://google.github.io/tensorstore/kvstore/ocdbt/index.html
       ocdbt_target_data_file_size = _DEFAULT_OCDBT_TARGET_DATA_FILE_SIZE
