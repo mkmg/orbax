@@ -986,6 +986,7 @@ def _get_tensorstore_spec(
     })
     if ocdbt_target_data_file_size:
       spec['kvstore']['target_data_file_size'] = ocdbt_target_data_file_size
+    spec['kvstore']['target_data_file_size'] = 200000000
   else:
     if name is None:
       ckpt_path = directory
